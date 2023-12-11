@@ -1,0 +1,12 @@
+schemaVersion: 1.1.0
+locale: "en"
+groupings:
+  - title: "OCI Core Cross Connect"
+    variables:
+    - compartment_ocid
+
+
+variables:
+  cross_connect:
+    type: object
+    required: true
