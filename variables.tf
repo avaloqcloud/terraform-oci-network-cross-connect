@@ -12,7 +12,7 @@ variable "cross_connect" {
     far_cross_connect_or_cross_connect_group_id = optional(string),
     defined_tags                                = optional(map(string)),
     freeform_tags                               = optional(map(string)),
-    macsec_properties = optional(object({
+    macsec_properties = optional(list(object({
       #Required
       state = string,
 
@@ -24,7 +24,7 @@ variable "cross_connect" {
     #         connectivity_association_key_secret_id  = string,
     #         connectivity_association_name_secret_id = string,
     #   }))
-    })),
+    }))),
     near_cross_connect_or_cross_connect_group_id = optional(string),
   })
 }
