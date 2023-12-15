@@ -12,19 +12,20 @@ resource "oci_core_cross_connect" "this" {
   defined_tags                                = each.value.defined_tags
   freeform_tags                               = each.value.freeform_tags
   dynamic "macsec_properties" {
-    for_each = each.value.macsec_properties
+    for_each = (each.value.macsec_properties != null) ? each.value.macsec_properties : []
     content {
       state                          = macsec_properties.value.state
-      # encryption_cipher              = macsec_properties.value.encryption_cipher
-      # is_unprotected_traffic_allowed = macsec_properties.value.is_unprotected_traffic_allowed
+      encryption_cipher              = try(macsec_properties.value.encryption_cipher, null)
+      is_unprotected_traffic_allowed = try(macsec_properties.value.is_unprotected_traffic_allowed, null)
 
-      # dynamic "primary_key" {
-      #   for_each = (macsec_properties.value.primary_key != null) ? macsec_properties.value.pirmary_key : {}
-      #   content {
-      #     connectivity_association_key_secret_id  = primary_key.value.connectivity_association_key_secret_id
-      #     connectivity_association_name_secret_id = primary_key.value.connectivity_association_name_secret_id
-      #   }
-      # }
+      dynamic "primary_key" {
+        for_each = (macsec_properties.value.primary_key != null) ? macsec_properties.value.primary_key : []
+        content {
+          connectivity_association_key_secret_id  = primary_key.value.connectivity_association_key_secret_id
+          connectivity_association_name_secret_id = primary_key.value.connectivity_association_name_secret_id
+        }
+      }
     }
   }
+  near_cross_connect_or_cross_connect_group_id = each.value.near_cross_connect_or_cross_connect_group_id
 }
