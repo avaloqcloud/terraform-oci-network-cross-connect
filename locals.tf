@@ -3,13 +3,13 @@ locals {
     "resource" = {
       # Required
       compartment_id        = var.cross_connect.compartment_id
-      display_name          = var.cross_connect.display_name
+      display_name          = lower(var.cross_connect.display_name)
       location_name         = data.oci_core_cross_connect_locations.cross_connect_location.cross_connect_locations[0].name
       port_speed_shape_name = var.cross_connect.port_speed_shape_name
 
       # Optional
       cross_connect_group_id                       = var.cross_connect.cross_connect_group_id
-      customer_reference_name                      = var.cross_connect.customer_reference_name
+      customer_reference_name                      = lower(var.cross_connect.customer_reference_name)
       far_cross_connect_or_cross_connect_group_id  = var.cross_connect.far_cross_connect_or_cross_connect_group_id
       defined_tags                                 = var.cross_connect.defined_tags
       freeform_tags                                = var.cross_connect.freeform_tags

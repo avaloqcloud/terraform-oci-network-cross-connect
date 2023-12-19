@@ -8,10 +8,10 @@
       "state": "ENABLED",
       "encryption_cipher": "aes128-gcm-xpn",
       "is_unprotected_traffic_allowed": false,
-      "primary_key": {
+      "primary_key": [{
         "connectivity_association_key_secret_id": "ocid1.connectivity_association_key_secret_id",
         "connectivity_association_name_secret_id": "ocid1.connectivity_association_name_secret_id"
-      }
+      }]
     }]
   }
 }
