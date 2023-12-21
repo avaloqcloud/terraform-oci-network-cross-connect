@@ -7,10 +7,10 @@ The code provides a reusable and standalone Terraform module that provisions a C
 {
   "cross_connect": {
     "compartment_id": "ocid1.compartment_id",
-    "display_name": "oci1_chdc1_cross_connect_3",
+    "display_name": "my-cross-connect-1",
     "port_speed_shape_name": "10 Gbps",
     "cross_connect_group_id": "ocid1.cross_connect_group_id",
-    "customer_reference_name": "oci1_chdc1_cross_connect_3",
+    "customer_reference_name": "my-cross-connect-1",
     "macsec_properties": [{
         "state": "ENABLED",
         "encryption_cipher": "aes128-gcm-xpn",
@@ -47,8 +47,7 @@ No modules.
 | Name | Type |
 |------|------|
 | [oci_core_cross_connect.this](https://registry.terraform.io/providers/oracle/oci/5.18.0/docs/resources/core_cross_connect) | resource |
-| [oci_core_cross_connect_locations.cross_connect_location](https://registry.terraform.io/providers/oracle/oci/5.18.0/docs/data-sources/core_cross_connect_locations) | data source |
-| [oci_core_cross_connects.existing_cross_connect](https://registry.terraform.io/providers/oracle/oci/5.18.0/docs/data-sources/core_cross_connects) | data source |
+| [oci_core_cross_connect_locations.cross_connect_locations](https://registry.terraform.io/providers/oracle/oci/5.18.0/docs/data-sources/core_cross_connect_locations) | data source |
 
 ## Inputs
 
