@@ -27,4 +27,5 @@ resource "oci_core_cross_connect" "this" {
     }
   }
   near_cross_connect_or_cross_connect_group_id = var.cross_connect.near_cross_connect_or_cross_connect_group_id
+  is_active = var.cross_connect.is_active
 }

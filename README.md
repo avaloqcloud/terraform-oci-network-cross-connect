@@ -19,7 +19,8 @@ The code provides a reusable and standalone Terraform module that provisions a C
           "connectivity_association_key_secret_id": "ocid1.connectivity_association_key_secret_id",
           "connectivity_association_name_secret_id": "ocid1.connectivity_association_name_secret_id"
         }]
-      }]
+      }],
+    "is_active": false
   }
 }
 ```
@@ -53,7 +54,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_cross_connect"></a> [cross\_connect](#input\_cross\_connect) | Cross Connect Input Object | <pre>object({<br>    compartment_id        = string,<br>    display_name          = string,<br>    location_name         = optional(string),<br>    port_speed_shape_name = string,<br><br>    # Optional<br>    cross_connect_group_id                      = optional(string),<br>    customer_reference_name                     = optional(string),<br>    far_cross_connect_or_cross_connect_group_id = optional(string),<br>    defined_tags                                = optional(map(string)),<br>    freeform_tags                               = optional(map(string)),<br>    macsec_properties = optional(list(object({<br>      # Required<br>      state = string,<br><br>      # Optional<br>      encryption_cipher              = optional(string),<br>      is_unprotected_traffic_allowed = optional(bool),<br>      primary_key = optional(list(object({<br>        # Required<br>        connectivity_association_key_secret_id  = string,<br>        connectivity_association_name_secret_id = string,<br>      })))<br>    }))),<br>    near_cross_connect_or_cross_connect_group_id = optional(string),<br>  })</pre> | n/a | yes |
+| <a name="input_cross_connect"></a> [cross\_connect](#input\_cross\_connect) | Cross Connect Input Object | <pre>object({<br>    compartment_id        = string,<br>    display_name          = string,<br>    location_name         = optional(string),<br>    port_speed_shape_name = string,<br><br>    # Optional<br>    cross_connect_group_id                      = optional(string),<br>    customer_reference_name                     = optional(string),<br>    far_cross_connect_or_cross_connect_group_id = optional(string),<br>    defined_tags                                = optional(map(string)),<br>    freeform_tags                               = optional(map(string)),<br>    macsec_properties = optional(list(object({<br>      # Required<br>      state = string,<br><br>      # Optional<br>      encryption_cipher              = optional(string),<br>      is_unprotected_traffic_allowed = optional(bool),<br>      primary_key = optional(list(object({<br>        # Required<br>        connectivity_association_key_secret_id  = string,<br>        connectivity_association_name_secret_id = string,<br>      })))<br>    }))),<br>    near_cross_connect_or_cross_connect_group_id = optional(string),<br>    is_active = optional(bool),<br>  })</pre> | n/a | yes |
 
 ## Outputs
 
